@@ -13,7 +13,7 @@ const [totalResults, setTotalResults] = useState(null)
  
   const UpdateNews=async()=> {
     props.setProgress(0);
-    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.api_key}&pageSize=24`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=777fab8b175e40f39350bbecdabc6747&pageSize=24`;
     props.setProgress(15);
     setloading(true);
     let data = await fetch(url);
