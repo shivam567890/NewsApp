@@ -3,7 +3,6 @@ import NewsItem from './NewsItem'
 import Loader from './Loader';
 import PropTypes from 'prop-types'
 
-
 const News =(props)=> {
  const  [articles, setarticles] = useState([])
 const  [loading, setloading] = useState(true)
@@ -16,8 +15,7 @@ const [totalResults, setTotalResults] = useState(null)
     let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=777fab8b175e40f39350bbecdabc6747&pageSize=24`;
     props.setProgress(15);
     setloading(true);
-    let data = await fetch(url);
-    
+    let data = await fetch(url);    
     props.setProgress(50);
     let parsedData = await data.json();
     console.log(parsedData)
@@ -27,9 +25,9 @@ const [totalResults, setTotalResults] = useState(null)
     setloading(false)
     props.setProgress(100);
   }
-
   useEffect(() => {
    UpdateNews();
+    // eslint-disable-next-line 
   }, [])
   
  const handleNextClick = async () => {
@@ -69,11 +67,9 @@ const  handlePrevClick = async () => {
       </div>
     )
 }
-
 News.defaultProps = {
   country: "in",
   category: "science"
-
 }
 News.propTypes = {
   country: PropTypes.string,
